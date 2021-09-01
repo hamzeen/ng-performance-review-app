@@ -1,0 +1,6 @@
+
+<div class="container single-page">
+  <div *ngIf="!authService.isTokenExpired()" (click)="logout()" id="btn-logout">Logout</div>
+  <router-outlet></router-outlet>
+</div><!-- .container -->
+

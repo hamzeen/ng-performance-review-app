@@ -1,0 +1,84 @@
+
+
+<div class="breadcrumb">
+  <span class="badge-breadcrumb">&nbsp;you are here&nbsp;</span>
+  <li class="breadcrumb-item">Dashboard</li>
+  <li class="breadcrumb-item">Reviews</li>
+</div>
+
+<div id="timeline-containter" class="row">
+
+  <div class="col-12 col-lg-9">
+
+    <!-- unauthorised //-->
+    <div *ngIf="!userId">
+      <h1>Reviews Overview</h1>
+
+      <p>{{userId}}You have to select an employee.
+        Please check employees page on your dashboard.</p>
+    </div>
+
+
+    <!-- a user has been selected //-->
+    <div *ngIf="userId">
+      <h1>Reviews Overview: {{userName}}</h1>
+
+      <form [formGroup]="formReview" class="well" (keyup.enter)="onSave()">
+        <div class="form-group">
+          <label for="event-title">Review Description</label>
+          <input formControlName="mtnTitle" id="event-title"
+                 type="text" class="form-control"
+                 placeholder="description (ex: 'competency review')">
+        </div>
+        <div class="form-group">
+          <label for="event-title">Year</label>
+          <input formControlName="year" id="review-year"
+                 type="number" class="form-control"
+                 placeholder="ex: '2020'">
+        </div>
+
+        <div style="clear: both; margin: 15px;">
+          <input type="button" class="btn btn-save-event" (click)="onSave()" value="Save">
+        </div>
+
+      </form>
+
+
+
+      <table class="table table-striped table-bordered">
+
+        <thead>
+        <th>Name</th><th>Action</th>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let event of reviews; let i = index">
+          <td>{{event.desc}}</td>
+          <td>
+            <a (click)="editReview(i)">edit</a> |
+            <a (click)="deleteReview(i)">delete</a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+
+
+
+  <div class="col-12 col-lg-3">
+    <div class="sidebar">
+      <div class="about-me">
+        <h2>About me</h2>
+
+        <p>
+          Here goes your biography, till that is baked you can take a lot at your
+          reviews. Have a nice day!</p>
+      </div>
+
+      <div class="recent-posts"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,76 @@
+
+<div class="breadcrumb">
+  <span class="badge-breadcrumb">&nbsp;you are here&nbsp;</span>
+  <li class="breadcrumb-item">Employeee</li>
+  <li class="breadcrumb-item">Home</li>
+</div>
+
+
+<div id="todo-containter" class="row">
+
+  <div class="col-12 col-lg-9">
+
+    <h1>Your Reviews</h1>
+    <p *ngIf="mockData" class="notifications">
+      <span *ngIf="userName">Hi {{userName}}, </span>
+      Currently you are being shown mock reviews.
+      Would it be a good idea to ask your manager for a performance review ..
+    </p>
+
+
+      <div class="app" id="app">
+
+        <div class="filters">
+
+          <button
+            class="btn filters__btn filters__btn--all"
+            (click)="filterReviews('all')">All</button>
+
+          <button
+            class="btn filters__btn filters__btn--complete"
+            (click)="filterReviews('complete')">Complete</button>
+
+          <button
+            class="btn filters__btn filters__btn--incomplete"
+            (click)="filterReviews('incomplete')">Incomplete</button>
+        </div>
+
+        <div name="list" class="todo-list">
+          <li
+            class="todo-list__item"
+            [class.complete]="itemReview.complete"
+            *ngFor="let itemReview of filteredReviews; let idx = index">
+
+
+              <span (click)="toggleReview(itemReview)"
+                  class="btn todo-list__item-done">
+                <i class="fa" [class.fa-check]="itemReview.complete"></i>
+              </span>
+
+              <button
+                class="todo-list__item-content"
+                (click)="toggleReview(itemReview)"
+                [class.todo-complete]="itemReview.complete">{{itemReview.year}}: {{itemReview.desc}}</button>
+
+              <span (click)="deleteReview(idx)"
+                  class="btn todo-list__item-remove">
+                <i class="fa fa-trash"></i></span>
+          </li>
+        </div>
+
+
+      </div>
+  </div>
+
+  <div class="col-12 col-lg-3">
+    <div class="sidebar">
+      <div class="about-me">
+        <h2>About me</h2>
+        <p>
+          Hi {{userName}}! Here goes your biography, till that is baked you can take a lot at your
+          reviews. Have a nice day!</p>
+      </div>
+      <div class="recent-posts"></div>
+    </div>
+  </div>
+</div>

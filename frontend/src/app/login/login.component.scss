@@ -1,0 +1,190 @@
+
+/* -----------------------
+  Form
+----------------------- */
+
+.btn-primary {
+  padding-top: 10px;
+  margin:10px 0px;
+  outline: none;
+  outline: none;
+}
+input.ng-invalid.ng-touched{
+  border: 1px solid red;
+}
+
+
+.form-control {
+  border-radius: 0;
+  box-shadow: none;
+}
+.form-control:focus {
+  box-shadow: none;
+}
+.form-group {
+  position: relative;
+  margin-bottom: 25px;
+}
+.form-group > label {
+  text-transform: uppercase;
+  font-size: 10px;
+  color: #a1a2a3;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(1.4);
+  transform: scale(1.4);
+  pointer-events: none;
+  position: relative;
+  z-index: 5;
+}
+.form-group > input {
+  width: 100%;
+}
+.form-group > label {
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(1.3) translateY(5px);
+  transform: scale(1.3) translateY(5px);
+}
+.form-group.not-empty > label {
+  -webkit-transform: none;
+  transform: none;
+}
+/*------------------------------
+	Form
+------------------------------*/
+.form-control {
+  border: 0;
+  border-bottom: 1px solid #bcd0e0;
+}
+.form-control,
+.form-control:focus,
+.form-control:focus:hover {
+  color: #000;
+  background: none;
+  outline: none;
+  font-size: 24px;
+}
+.form-control:focus,
+.form-control:focus:hover {
+  border-bottom: 1px solid #008dff;
+}
+
+
+label {
+  font-weight: 200;
+}
+th {
+  font-weight:400;
+}
+.btn {
+  box-shadow: -3px 4px 2px -1px rgba(0, 0, 0, 0.3);
+  -webkit-transition: all .1s ease;
+  -moz-transition: all .1s ease;
+  transition: all .1s ease;
+  -ms-transition: all .1s ease;
+  -o-transition: all .1s ease;
+}
+.btn:hover {
+  box-shadow: -2px 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.btn.focus, .btn:focus, .btn:hover {
+  outline: none;
+}
+
+fieldset {
+  margin-left: 62px;
+  margin-top: 7px;
+}
+
+input[type="radio"]:checked + label::before {
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  border-width: 2px;
+}
+
+input[type="radio"] +label::before {
+  transition: all 250ms cubic-bezier(.4,.25,.3,1);
+  content: "";
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #6672a0;
+  border: 0px solid #6672a0;
+  font-size: 0;
+  position: absolute;
+  bottom: 275%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 50%);
+  transform: translate(-50%, 50%);
+}
+
+input[type="radio"]:checked + label::after {
+  width: 30px;
+  height: 30px;
+}
+
+input[type="radio"] +label::after {
+  transition: all 250ms cubic-bezier(.4,.25,.3,1);
+  content: "";
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: #6672a0;
+  position: absolute;
+  bottom: 275%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 50%);
+  transform: translate(-50%, 50%);
+}
+
+input[type="radio"] +label {
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+input[type="radio"] +label {
+  color: #6672a0;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+}
+input[type="radio"] {
+  display: none;
+}
+
+.well {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 12px;
+  background-color: #FAFAFA;
+
+  .btn-login {
+    margin-top: 20px;
+    padding: 20px 70px;
+    background: #337ab7;
+    color: #fff;
+    font-size: 19px;
+    font-weight: 200;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  }
+}

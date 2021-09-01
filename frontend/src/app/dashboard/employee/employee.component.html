@@ -1,0 +1,75 @@
+
+  <div class="breadcrumb">
+  <span class="badge-breadcrumb">&nbsp;you are here&nbsp;</span>
+    <li class="breadcrumb-item">Dashboard</li>
+    <li class="breadcrumb-item">Users</li>
+  </div>
+
+  <h2 class="site-title margin-top-20">Employees</h2>
+
+
+<!-- Form to capture alumni details //-->
+<div class="row">
+  <div class="col-12 col-md-9 col-xl-9">
+  <form [formGroup]="formContact" (ngSubmit)="onSubmit()" class="well ng-valid ng-dirty ng-pristine">
+
+
+    <div>
+      <label for="username">Username:</label>
+      <input type="text" formControlName="username" class="form-control" id="username" autocomplete="on">
+      <span *ngIf="formContact.get('username').touched &&
+        formContact.hasError('invalidUsername', 'username')">
+        invalid username it should contain at least 3 same characters in sequence</span>
+    </div>
+
+
+    <div>
+      <label for="password">Password:</label>
+      <input formControlName="password"
+             id="password"
+             type="password"
+             class="form-control"
+             autocomplete="on">
+      <span *ngIf="formContact.get('password').touched &&
+        formContact.hasError('required', 'password')">
+        password is mandatory field, can't be empty.</span>
+    </div>
+
+    <div>
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password"
+             formControlName="confirmPassword"
+             class="form-control"
+             id="confirmPassword" autocomplete="on">
+      <span *ngIf="formContact.get('confirmPassword').touched &&
+        formContact.hasError('passwordsDontMatch', 'confirmPassword')">passwords do not match</span>
+    </div>
+
+    <button class="btn btn-primary btn-create-user" type="submit">Add Employee</button>
+    <!--<pre>{{formContact.value | json}}</pre>//-->
+  </form>
+  </div>
+
+</div>
+
+<br/><br/>
+
+
+  <div class="row">
+    <div class="col-12 col-md-9 col-xl-9">
+
+      <h5>Employee List</h5>
+
+      <div class="accordion">
+        <div *ngFor="let employee of employees; let i = index" class="accordion__item">
+          <div style="display: flex" class="accordion-header ">
+            <div class="stud-name" style="flex: 2;"># {{employee._id}}</div>
+            <div style="flex: 5;">{{employee.name}}</div>
+            <div style="flex: 2;" (click)="onReviewsByEmployee(i)">Reviews</div>
+          </div>
+        </div><!-- end of accordion item -->
+
+      </div><!-- end of accordion -->
+
+    </div>
+  </div>
