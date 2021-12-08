@@ -81,10 +81,10 @@ db.reviews.drop()
 ## Screens
 
 * landing page for employees
-![employee landing](https://raw.githubusercontent.com/hamzeen/FullStackEngineerChallenge/master/screenshots/003_landing_page_employees.png)
+![employee landing](https://raw.githubusercontent.com/hamzeen/ng-performance-review-app/master/screenshots/003_landing_page_employees.png)
 
 * admin dashboard: managing employees
-![dashboard manage employees](https://raw.githubusercontent.com/hamzeen/FullStackEngineerChallenge/master/screenshots/004_dashboard_admin.png)
+![dashboard manage employees](https://raw.githubusercontent.com/hamzeen/ng-performance-review-app/master/screenshots/004_dashboard_admin.png)
 
 
 ## Improvements
